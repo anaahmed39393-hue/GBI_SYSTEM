@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>‰Ÿ«„ GBI - „ «»⁄… «·≈‰ «Ã</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: #1a202c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 340px;
+            display: none; /* „Œ›Ì ·ÕÌ‰  ”ÃÌ· «·œŒÊ· */
+        }
+        .login-card {
+            background: #2d3748;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 320px;
+            text-align: center;
+            color: white;
+        }
+        h2 { color: #f6ad55; margin-bottom: 5px; }
+        .login-card p { color: #a0aec0; font-size: 13px; margin-bottom: 25px; }
+        .form-group { margin-bottom: 15px; text-align: right; }
+        label { display: block; margin-bottom: 5px; font-size: 14px; color: #4a5568; }
+        .login-card label { color: white; }
+        select, input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            background-color: #f7fafc;
+            color: #1a202c;
+            border-radius: 8px;
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 16px;
+        }
+        .login-card select, .login-card input {
+            background-color: #1a202c;
+            color: white;
+            border: 1px solid #4a5568;
+        }
+        .btn-main {
+            background-color: #1a365d;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .btn-main:hover { background-color: #2a4365; }
+        .btn-login {
+            background-color: #dd6b20;
+        }
+        .btn-login:hover { background-color: #c05621; }
+        .footer-text { margin-top: 20px; font-size: 11px; color: #718096; }
+    </style>
+</head>
+<body>
+
+<!-- ‘«‘…  ”ÃÌ· «·œŒÊ· -->
+<div class="login-card" id="loginScreen">
+    <h2>GBI</h2>
+    <p> ﬁ«—Ì— „ «»⁄… «·≈‰ «Ã</p>
+    
+    <div class="form-group">
+        <label>«Œ «— «”„ «·„” Œœ„</label>
+        <select id="username">
+            <option>ADMIN</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>ﬂ·„… «·„—Ê—</label>
+        <input type="password" id="password" placeholder="«ﬂ » 1234 ·· Ã—»…">
+    </div>
+
+    <button class="btn-main btn-login" onclick="checkLogin()">œŒÊ· ··‰Ÿ«„</button>
+    
+    <div class="footer-text"> ’„Ì„ Ê ÿÊÌ— „. √Õ„œ „”·„</div>
+</div>
+
+<!-- ‘«‘… «·»—‰«„Ã «·—∆Ì”Ì… (Õ”«» «·√Ê“«‰) -->
+<div class="card" id="appScreen">
+    <div class="form-group">
+        <label>«·’‰›</label>
+        <select>
+            <option> Ê·Â</option>
+            <option>”»«∆ﬂ</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>«·⁄Ì«—</label>
+        <select style="background-color: #fffdf0; border-color: #f6e05e; font-weight: bold; color: #b7791f;">
+            <option>⁄Ì«— 24</option>
+            <option>⁄Ì«— 21</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Ê“‰ «·ﬁÿ⁄… (Ã—«„)</label>
+        <input type="number" id="pieceWeight" value="31.10" step="0.01">
+    </div>
+
+    <div class="form-group">
+        <label>«·⁄œœ</label>
+        <input type="number" id="quantity" value="0" oninput="calculateTotal()">
+    </div>
+
+    <div class="form-group">
+        <label>«·Ê“‰ «·≈Ã„«·Ì</label>
+        <input type="text" id="totalWeight" value="0.00 Ã" readonly style="background-color: #f7fafc; font-weight: bold; color: #2b6cb0;">
+    </div>
+
+    <button class="btn-main" onclick="alert(' „ Õ›Ÿ «·»Ì«‰«  »‰Ã«Õ!')">Õ›Ÿ</button>
+</div>
+
+<script>
+    function checkLogin() {
+        let pass = document.getElementById('password').value;
+        if(pass === "1234") {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('appScreen').style.display = 'block';
+        } else {
+            alert("ﬂ·„… «·„—Ê— €Ì— ’ÕÌÕ… (Ã—» «ﬂ » 1234)");
+        }
+    }
+
+    function calculateTotal() {
+        let weight = parseFloat(document.getElementById('pieceWeight').value) || 0;
+        let qty = parseFloat(document.getElementById('quantity').value) || 0;
+        let total = weight * qty;
+        document.getElementById('totalWeight').value = total.toFixed(2) + " Ã";
+    }
+</script>
+
+</body>
+</html>
