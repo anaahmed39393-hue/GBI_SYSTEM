@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>‰Ÿ«„ GBI - „ «»⁄… «·≈‰ «Ã</title>
+    <title>√§√ô√á√£ GBI - √£√ä√á√à√ö√â √á√°√Ö√§√ä√á√å</title>
     <style>
         body {
             font-family: Tahoma, sans-serif;
@@ -20,7 +20,7 @@
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             width: 340px;
-            display: none; /* „Œ›Ì ·ÕÌ‰  ”ÃÌ· «·œŒÊ· */
+            display: none; /* √£√é√ù√≠ √°√ç√≠√§ √ä√ì√å√≠√° √á√°√è√é√¶√° */
         }
         .login-card {
             background: #2d3748;
@@ -74,62 +74,62 @@
 </head>
 <body>
 
-<!-- ‘«‘…  ”ÃÌ· «·œŒÊ· -->
+<!-- √î√á√î√â √ä√ì√å√≠√° √á√°√è√é√¶√° -->
 <div class="login-card" id="loginScreen">
     <h2>GBI</h2>
-    <p> ﬁ«—Ì— „ «»⁄… «·≈‰ «Ã</p>
+    <p>√ä√û√á√ë√≠√ë √£√ä√á√à√ö√â √á√°√Ö√§√ä√á√å</p>
     
     <div class="form-group">
-        <label>«Œ «— «”„ «·„” Œœ„</label>
+        <label>√á√é√ä√á√ë √á√ì√£ √á√°√£√ì√ä√é√è√£</label>
         <select id="username">
             <option>ADMIN</option>
         </select>
     </div>
 
     <div class="form-group">
-        <label>ﬂ·„… «·„—Ê—</label>
-        <input type="password" id="password" placeholder="«ﬂ » 1234 ·· Ã—»…">
+        <label>√ü√°√£√â √á√°√£√ë√¶√ë</label>
+        <input type="password" id="password" placeholder="√á√ü√ä√à 1234 √°√°√ä√å√ë√à√â">
     </div>
 
-    <button class="btn-main btn-login" onclick="checkLogin()">œŒÊ· ··‰Ÿ«„</button>
+    <button class="btn-main btn-login" onclick="checkLogin()">√è√é√¶√° √°√°√§√ô√á√£</button>
     
-    <div class="footer-text"> ’„Ì„ Ê ÿÊÌ— „. √Õ„œ „”·„</div>
+    <div class="footer-text">√ä√ï√£√≠√£ √¶√ä√ò√¶√≠√ë √£. √É√ç√£√è √£√ì√°√£</div>
 </div>
 
-<!-- ‘«‘… «·»—‰«„Ã «·—∆Ì”Ì… (Õ”«» «·√Ê“«‰) -->
+<!-- √î√á√î√â √á√°√à√ë√§√á√£√å √á√°√ë√Ü√≠√ì√≠√â (√ç√ì√á√à √á√°√É√¶√í√á√§) -->
 <div class="card" id="appScreen">
     <div class="form-group">
-        <label>«·’‰›</label>
+        <label>√á√°√ï√§√ù</label>
         <select>
-            <option> Ê·Â</option>
-            <option>”»«∆ﬂ</option>
+            <option>√ä√¶√°√•</option>
+            <option>√ì√à√á√Ü√ü</option>
         </select>
     </div>
 
     <div class="form-group">
-        <label>«·⁄Ì«—</label>
+        <label>√á√°√ö√≠√á√ë</label>
         <select style="background-color: #fffdf0; border-color: #f6e05e; font-weight: bold; color: #b7791f;">
-            <option>⁄Ì«— 24</option>
-            <option>⁄Ì«— 21</option>
+            <option>√ö√≠√á√ë 24</option>
+            <option>√ö√≠√á√ë 21</option>
         </select>
     </div>
 
     <div class="form-group">
-        <label>Ê“‰ «·ﬁÿ⁄… (Ã—«„)</label>
+        <label>√¶√í√§ √á√°√û√ò√ö√â (√å√ë√á√£)</label>
         <input type="number" id="pieceWeight" value="31.10" step="0.01">
     </div>
 
     <div class="form-group">
-        <label>«·⁄œœ</label>
+        <label>√á√°√ö√è√è</label>
         <input type="number" id="quantity" value="0" oninput="calculateTotal()">
     </div>
 
     <div class="form-group">
-        <label>«·Ê“‰ «·≈Ã„«·Ì</label>
-        <input type="text" id="totalWeight" value="0.00 Ã" readonly style="background-color: #f7fafc; font-weight: bold; color: #2b6cb0;">
+        <label>√á√°√¶√í√§ √á√°√Ö√å√£√á√°√≠</label>
+        <input type="text" id="totalWeight" value="0.00 √å" readonly style="background-color: #f7fafc; font-weight: bold; color: #2b6cb0;">
     </div>
 
-    <button class="btn-main" onclick="alert(' „ Õ›Ÿ «·»Ì«‰«  »‰Ã«Õ!')">Õ›Ÿ</button>
+    <button class="btn-main" onclick="alert('√ä√£ √ç√ù√ô √á√°√à√≠√á√§√á√ä √à√§√å√á√ç!')">√ç√ù√ô</button>
 </div>
 
 <script>
@@ -139,7 +139,7 @@
             document.getElementById('loginScreen').style.display = 'none';
             document.getElementById('appScreen').style.display = 'block';
         } else {
-            alert("ﬂ·„… «·„—Ê— €Ì— ’ÕÌÕ… (Ã—» «ﬂ » 1234)");
+            alert("√ü√°√£√â √á√°√£√ë√¶√ë √õ√≠√ë √ï√ç√≠√ç√â (√å√ë√à √á√ü√ä√à 1234)");
         }
     }
 
@@ -147,7 +147,7 @@
         let weight = parseFloat(document.getElementById('pieceWeight').value) || 0;
         let qty = parseFloat(document.getElementById('quantity').value) || 0;
         let total = weight * qty;
-        document.getElementById('totalWeight').value = total.toFixed(2) + " Ã";
+        document.getElementById('totalWeight').value = total.toFixed(2) + " √å";
     }
 </script>
 
